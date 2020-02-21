@@ -1,8 +1,8 @@
-"""add product categories
+"""empty message
 
-Revision ID: 97db2d7d9a6e
+Revision ID: 56d81221b69e
 Revises: 
-Create Date: 2020-02-21 21:37:03.394743
+Create Date: 2020-02-22 00:27:59.386614
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '97db2d7d9a6e'
+revision = '56d81221b69e'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,6 +21,7 @@ def upgrade():
     op.create_table('product_category',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=128), nullable=False),
+    sa.Column('image', sa.LargeBinary(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_index(op.f('ix_product_category_name'), 'product_category', ['name'], unique=True)

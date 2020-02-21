@@ -2,10 +2,10 @@
 import os
 
 from flask import Flask
-from flask_bootstrap import Bootstrap
 
 from store.models import db, migrate
 from store.shop import shop_bp
+from store.admin import admin
 
 def create_app(test_config=None):
     """create and configure the app"""
@@ -32,8 +32,7 @@ def create_app(test_config=None):
 
     db.init_app(app)
     migrate.init_app(app, db)
-    bootstrap = Bootstrap()
-    bootstrap.init_app(app)
+    admin.init_app(app)
 
     app.register_blueprint(shop_bp)
 
