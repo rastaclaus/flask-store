@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}" type="text/css">
+
+  </head>
+  <body>
+
+    <div class="header">
+      Главная
+    </div>
+
+    <div class="row">
+      <div class="col-3 col-s-3">
+        <img style="float:left;" src="{{ url_for('static', filename='images/logo.gif' ) }}">
+        <div style="text-align:center">
+          <h1>Ссаный Кот<h1>
+          <h3>Магазин элитных половых тряпок</h3>
+        </div>
+      </div>
+      <div style="text-align:center;" class="col-6 col-s-6 shop-title">
+        <h1>Добро пожаловать в наш магазин!</h1>
+        <p>
+          Здесь вы найдёте швабры, швабры, и, может быть швабры!
+        </p>
+      </div>
+      <div class="col-3 col-s-3">
+        <div class="tools" style="text-align:right;">
+          <p>Корзина</p>
+          <p>Оформить заказ</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3 col-s-3 menu">
+        <div class="menu-header collapsible">Каталог</div>
+        <ul class="menu-content">
+          {% for category in cats %}
+            <li>{{ category }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="col-6 col-s-9">
+        Здесь каталог товаров, статьи и прочее
+      </div>
+
+      <div class="col-3 col-s-12">
+        <div class="aside">
+          <h2>Салфетки продлевают жизнь!</h2>
+          <p>Если есть их три раза в день...</p>
+          <h2>Чем можно заменить швабру?</h2>
+          <p>Признаться ничем. Подробности...</p>
+          <h2>Как постирать кота в стиральной машине?</h2>
+          <p>Советы любящих хозяев</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Контакты и прочия</p>
+    </div>
+
+    <script type="text/javascript" src="{{ url_for('static', filename='js/collapse.js' ) }}"></script>
+  </body>
+</html>

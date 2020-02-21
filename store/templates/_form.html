@@ -1,0 +1,14 @@
+{% macro form_render(form) %}
+<form action="" method="post">
+{{ form.hidden_tag() }}
+{% for field in form %}
+  {% if field.id != 'submit' and field.id != 'csrf_token' %}
+  <p>
+    {{ field.label }}
+    {{ field }}
+  </p>
+  {% endif %}
+{% endfor %}
+{{ form.submit }}
+</form>
+{% endmacro %}
