@@ -11,7 +11,8 @@ from store.models import ProductCategory, db
 admin = Admin(
         index_view=AdminIndexView(
             name='Администрирование',
-            url='/mod'))
+            url='/mod'),
+        template_mode='bootstrap3')
 
 
 def _list_thumbnail(view, context, model, name):
