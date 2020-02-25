@@ -1,4 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3>Витрина</h3>
+  <div class="section group">
+    {% for cat in cats %}
+      <div class="cat span_1_of_3">
+        {{ cat.name }}<br>
+        <img
+          src="{{ url_for('static', filename='images/cat/'+cat.image) }}"
+          width=100px, height=120px
+          >
+      </div>
+    {% endfor %}
+  </div>
 {% endblock %}
